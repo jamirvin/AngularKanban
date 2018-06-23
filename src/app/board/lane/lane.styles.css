@@ -1,0 +1,22 @@
+
+:host {
+	flex: 1;
+	min-width: 200px;
+	height: 100%;
+	margin: 0 20px;
+	background-color: rgb(146, 146, 146);
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.separator {
+	width: 100%;
+}
+
+.title {
+	color: white;
+}
