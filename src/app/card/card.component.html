@@ -1,7 +1,13 @@
 <div class=content>
 	<h3 *ngIf="!isChanging" (click)="staticClick()" class=title>{{cardData.title}}</h3>
 	<input *ngIf="isChanging" class="title-input" (blur)="inputBlur()" [(ngModel)]="cardData.title">
-	<hr>
+
+	<div class="middle-content">
+		<div class="arrow left-arrow" (click)="moveLeft($event)"></div>
+		<hr class="separator-line">
+		<div class="arrow right-arrow" (click)="moveRight($event)"></div>
+	</div>
+
 	<div *ngIf="!isChanging" (click)="staticClick()" class="description" >{{cardData.description}}</div>
 	<textarea *ngIf="isChanging" (blur)="inputBlur()" class="description-input" [(ngModel)]="cardData.description"></textarea>
 </div>

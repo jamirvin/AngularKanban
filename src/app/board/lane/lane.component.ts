@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CardData } from '../../card-service/card.service';
+import { CardData, CardService } from '../../card-service/card.service';
+import { MoveEvent } from '../../card/card.component';
 
 @Component({
 	selector: 'kanban-lane',
@@ -15,7 +16,11 @@ export class LaneComponent implements OnInit {
 	@Input()
 	cards: CardData[]
 
-	constructor() { }
+	constructor(private cardService: CardService) { }
+
+	handleMove(card: CardData, move: MoveEvent) {
+		this.cardService.moveCard(card, move);
+	}
 
 	ngOnInit() { }
 }

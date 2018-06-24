@@ -1,6 +1,8 @@
 
-import { Component, OnInit, Input } from '@angular/core';
+import { EventEmitter, Component, OnInit, Input, Output } from '@angular/core';
 import { CardData } from '../card-service/card.service';
+
+export type MoveEvent = 'left' | 'right';
 
 @Component({
 	selector: 'kanban-card',
@@ -14,6 +16,9 @@ export class CardComponent implements OnInit {
 	@Input()
 	cardData: CardData;
 
+	@Output()
+	moveCard = new EventEmitter<MoveEvent>();
+
 	isChanging = false;
 	constructor() { }
 
@@ -23,6 +28,14 @@ export class CardComponent implements OnInit {
 
 	inputBlur() {
 		this.isChanging = false;
+	}
+
+	moveLeft(event: MouseEvent) {
+		this.moveCard.emit('left')
+	}
+
+	moveRight(event: MouseEvent) {
+		this.moveCard.emit('right')
 	}
 
 	ngOnInit() { }

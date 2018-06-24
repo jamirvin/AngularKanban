@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CardService, CardData, CardDataMap } from '../card-service/card.service';
+import { CardService, CardData, CardDataMap, LaneData } from '../card-service/card.service';
 
 @Component({
     selector: 'kanban-board',
@@ -9,9 +9,7 @@ import { CardService, CardData, CardDataMap } from '../card-service/card.service
 
 export class BoardComponent implements OnInit {
 
-    lanes = ['Todo', 'In Progress', 'Review', 'Complete']
-
-    cardData: CardDataMap;
+    cardData: LaneData[];
 
     constructor(private cardService: CardService) { }
 

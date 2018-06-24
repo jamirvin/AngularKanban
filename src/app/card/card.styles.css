@@ -1,7 +1,30 @@
 
 :host {
 	width: calc(100% - 20px);
-	/* padding: 20px; */
 	margin: 10px auto;
 	background-color: whitesmoke
+}
+
+.middle-content {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.separator-line {
+	flex: 1;
+}
+
+.arrow {
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+}
+
+.left-arrow {
+	background-image: url("../../assets/chevron-left.svg");
+}
+
+.right-arrow {
+	background-image: url("../../assets/chevron-right.svg");
 }

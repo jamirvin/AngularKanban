@@ -1,5 +1,5 @@
 <div class="content">
 	<h2 class="title">{{title}}</h2>
 	<hr class=separator>
-	<kanban-card *ngFor="let card of cards" [cardData]="card" ></kanban-card>
+	<kanban-card *ngFor="let card of cards" [cardData]="card" (moveCard)="handleMove(card, $event)"></kanban-card>
 </div>
